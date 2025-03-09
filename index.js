@@ -122,22 +122,6 @@ const translations = {
         });
         
 
-window.onload = function() {
-    VANTA.FOG({
-        el: "#backgrond",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        highlightColor: 0x640303,
-        midtoneColor: 0x50100,
-        lowlightColor: 0x40405,
-        baseColor: 0x20202,
-        blurFactor: 0.32,
-        speed: 0.70,
-        zoom: 1.80
-    });
-};
+
         
 

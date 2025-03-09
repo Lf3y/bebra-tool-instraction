@@ -83,7 +83,7 @@ const translations = {
                 "step-4": "4. After memory analysis, the program will display information about the dungeon contents.",
                 "step-5": "5. Upon completion, the program will automatically close <span style='color:#ff3333;'>Albion Online</span> and the <strong>BEService</strong> process.",
                 "step-6": "3. Right-click on the <strong style=\"color:#ff3333;\">Albion Online</strong> client and select <span style=\"color:#ff3333;\">\"File Location\"</span>. Then, open the <strong style=\"color:#ff3333;\">game</strong> folder and find two executable files: <strong style=\"color:#ff3333;\">Albion-Online.exe</strong> and <strong style=\"color:#ff3333;\">Albion-Online_BE.exe</strong>. For convenience, <span style=\"color:#ff3333;\">create shortcuts</span> for these files and move them to the cheat folder. Then, click <strong style=\"color:#ff3333;\">\"Browse...\"</strong> and select the specified executable files or their shortcuts.",
-                "download-title": "⬇️Download programm⬇️",
+                "download-title": "⬇️Download program⬇️",
                 "downloadBtn": "Download",
                 "delay-title": "🤔 How to determine the delay?",
                 "delay-text": "When disabling the anti-cheat, it is important to properly configure the delay; otherwise, the system will not work correctly. The delay is configured only once. After that, the value is saved in the configuration file and will be automatically used in subsequent launches. There are three possible scenarios:",
@@ -111,3 +111,33 @@ const translations = {
                 }
             });
         });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => {
+                document.querySelector(".preloader").style.opacity = "0";
+                setTimeout(() => {
+                    document.querySelector(".preloader").style.display = "none";
+                }, 500);
+            }, 800); // Прелоадер исчезает через 0.8 секунды
+        });
+        
+
+window.onload = function() {
+    VANTA.FOG({
+        el: "#backgrond",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        highlightColor: 0x640303,
+        midtoneColor: 0x50100,
+        lowlightColor: 0x40405,
+        baseColor: 0x20202,
+        blurFactor: 0.32,
+        speed: 0.70,
+        zoom: 1.80
+    });
+};
+        
+

@@ -55,7 +55,9 @@ const translations = {
                 "big-delay-text": "Если задержка слишком велика, игра успевает запустить вторую копию Albion Online или в окне BattleEye появляется больше двух строк <span style='color:#ff3333;''>(см. изображение)</span>. Здесь нужно <strong style='color:#ff3333;''>уменьшить задержку</strong>",
                 "perfect-delay-title": "✅ Идеальная задержка",
                 "perfect-delay-text": "Правильная настройка задержки приводит к появлению ровно двух строк в окне BattleEye  <span style='color:#ff3333;'>(см. изображение)</span>. В этом случае античит успешно отключён, и вы можете пользоваться всеми возможностями программы.",
-                "footer-copyright": "&copy; 2025 <strong>BEBRATOOL</strong>. Все права защищены."
+                "footer-copyright": "&copy; 2025 <strong>BEBRATOOL</strong>. Все права защищены.",
+                "demonstration-video-text": "🎥 Демонстрация работы",
+                "pathes-video-text": "🎥 Как найти пути"
             },
             "en": {
                 "update-title": "Major Update <strong style='color:#ff3333;'>Version 2.0</strong> 08.03.2025",
@@ -93,7 +95,9 @@ const translations = {
                 "big-delay-text": "If the delay is too large, the game manages to launch a second copy of Albion Online, or more than two lines appear in the BattleEye window <span style='color:#ff3333;'> (see image)</span>. Here, you need to <strong style='color:#ff3333;'>decrease the delay</strong>",
                 "perfect-delay-title": "✅ Perfect delay",
                 "perfect-delay-text": "Properly configuring the delay results in exactly two lines in the BattleEye window <span style='color:#ff3333;'> (see image)</span>. In this case, the anti-cheat is successfully disabled, and you can use all the features of the program.",
-                "footer-copyright": "&copy; 2025 <strong>BEBRATOOL</strong>. All rights reserved."
+                "footer-copyright": "&copy; 2025 <strong>BEBRATOOL</strong>. All rights reserved.",
+                "demonstration-video-text": "🎥 Demonstration of work",
+                "pathes-video-text": "🎥 How to find pathes"
             }
         };
 

@@ -124,8 +124,8 @@ const translations = {
                 }, 500);
             }, 800); // Прелоадер исчезает через 0.8 секунды
         });
-        
 
-
-        
-
+fetch("/.netlify/functions/logVisitor")
+.then(response => response.json())
+.then(data => console.log("Информация о посетителе:", data))
+.catch(error => console.error("Ошибка при логировании:", error));

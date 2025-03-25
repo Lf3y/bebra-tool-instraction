@@ -217,3 +217,39 @@ a:hover {
 .video-container:hover {
     transform: scale(1.02);
 }
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+}
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    
+}
+.slide {
+    min-width: 100%;
+    display: none;
+}
+.slide.active {
+    display: block;
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.prev { left: 0; }
+.next { right: 0; }
+
+.slider ul li{
+    list-style: none;
+}

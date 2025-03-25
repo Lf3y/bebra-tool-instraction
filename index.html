@@ -63,15 +63,31 @@
 
     </header>
     <div class="container">
-        
         <div class="block">
-            <h2 id="update-title">Крупное обновление <strong style="color:#ff3333;">Версия 2.0</strong> 08.03.2025</h2>
-            <ul id="update-list">
-                <li>Полностью убрано использование дополнительного ПО.</li>
-                <li>Переделан функционал <strong style="color:#ff3333;">Просмотреть данж</strong>.</li>
-                <li>Новый дизайн.</li>
-                <li>Добавлено две локализации.</li>
-            </ul>
+        <div class="slider-container">
+            <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
+            <div class="slider">
+                <div class="slide active">
+                    <h2>Обновление <strong style="color:#ff3333;">Версия 2.1</strong> 25.02.2025</h2>
+                    <ul>
+                        <li>Исправлены ошибки с загрузкой.</li>
+                        <li>Оптимизирована работа приложения.</li>
+                        <li>Исправлен чекер.</li>
+                    </ul>
+                </div>
+                <div class="slide">
+                    <h2>Крупное обновление <strong style="color:#ff3333;">Версия 2.0</strong> 08.03.2025</h2>
+                    <ul>
+                        <li>Полностью убрано использование дополнительного ПО.</li>
+                        <li>Переделан функционал <strong style="color:#ff3333;">Просмотреть данж</strong>.</li>
+                        <li>Новый дизайн.</li>
+                        <li>Добавлено две локализации.</li>
+                    </ul>
+                </div>
+
+            </div>
+            <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
+        </div>
         </div>
         <div class="block">
             <h2 id="info-title">Основная информация</h2>

@@ -1,0 +1,455 @@
+/* Common styles for BEBRATOOL website */
+:root {
+    /* Colors */
+    --color-dark: #0a0a0a;
+    --color-dark-alt: #1a1a1a;
+    --color-blood: #8a0303;
+    --color-blood-light: #ff3333;
+    --color-text: #ffffff;
+    --color-text-secondary: #bbbbbb;
+    
+    /* Typography */
+    --font-primary: 'Raleway', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+    
+    /* Effects */
+    --shadow-normal: 0 5px 15px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.7);
+    --transition-normal: all 0.3s ease;
+    
+    /* Animations */
+    --anim-fade: fade 0.5s ease;
+    --anim-slide: slide 0.5s ease;
+}
+
+/* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Raleway:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-text);
+    background-color: var(--color-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+    transition: var(--transition-normal);
+}
+
+a:hover {
+    color: var(--color-blood-light);
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, var(--color-blood), #420000);
+    color: var(--color-text);
+    border: none;
+    border-radius: 5px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-normal);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    color: var(--color-text);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: var(--transition-normal);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--color-blood);
+}
+
+/* Blood effects */
+.blood-drips-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.blood-drip-top {
+    position: absolute;
+    top: -20px;
+    width: 3px;
+    height: 20px;
+    background-color: var(--color-blood);
+    border-radius: 0 0 3px 3px;
+    animation: bloodDrip 8s infinite;
+}
+
+.drip1 { left: 10%; animation-delay: 0s; }
+.drip2 { left: 30%; animation-delay: 2s; }
+.drip3 { left: 50%; animation-delay: 4s; }
+.drip4 { left: 70%; animation-delay: 1s; }
+.drip5 { left: 90%; animation-delay: 3s; }
+
+@keyframes bloodDrip {
+    0%, 100% { top: -20px; height: 20px; }
+    50% { top: 0; height: 20px; }
+    60% { top: 0; height: 0; }
+}
+
+/* Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loader {
+    width: 100px;
+    height: 100px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(0.8); opacity: 0.5; }
+}
+
+/* Header */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(138, 3, 3, 0.3);
+}
+
+.header-logo-text {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.header-top h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(10, 10, 10, 0.8);
+    padding: 40px 0 20px;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--color-blood);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    margin-right: 10px;
+}
+
+.footer-logo span {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-text);
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.footer-links a:hover {
+    color: var(--color-blood-light);
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--color-blood);
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+.footer-blood-drips {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-blood-drip {
+    width: 3px;
+    height: 0;
+    background-color: var(--color-blood);
+    animation: footerDrip 4s ease-in-out infinite;
+    animation-delay: calc(var(--drip-index, 0) * 0.5s);
+    border-radius: 0 0 3px 3px;
+}
+
+.footer-blood-drip:nth-child(1) { --drip-index: 0; }
+.footer-blood-drip:nth-child(2) { --drip-index: 1; }
+.footer-blood-drip:nth-child(3) { --drip-index: 2; }
+
+@keyframes footerDrip {
+    0% { height: 0; }
+    50% { height: 20px; }
+    100% { height: 0; }
+}
+
+/* Blood cursor */
+.blood-cursor {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    opacity: 0.6;
+    transition: width 0.2s, height 0.2s;
+    box-shadow: 0 0 5px rgba(138, 3, 3, 0.5);
+    mix-blend-mode: screen;
+}
+
+.blood-trail {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0.3;
+    animation: fadeTrail 1.5s forwards;
+}
+
+@keyframes fadeTrail {
+    0% { opacity: 0.3; }
+    100% { opacity: 0; transform: scale(0.5); }
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+    padding: 5px 0;
+}
+
+.nav-links a:hover {
+    color: var(--color-blood-light);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-blood);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Mobile menu */
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px;
+    transition: right 0.3s ease;
+    border-left: 3px solid var(--color-blood);
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu a {
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 15px 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: color 0.3s;
+}
+
+.mobile-menu a:hover {
+    color: var(--color-blood-light);
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-button {
+        display: block;
+    }
+    
+    .header-top {
+        padding: 15px 5%;
+    }
+    
+    .logo-img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .header-top h1 {
+        font-size: 1.2rem;
+    }
+    
+    .footer-links {
+        gap: 15px;
+    }
+    
+    .footer-logo span {
+        font-size: 1.2rem;
+    }
+} 

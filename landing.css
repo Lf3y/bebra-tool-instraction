@@ -521,6 +521,25 @@ section {
     box-shadow: var(--shadow-lg);
 }
 
+.feature-item-correct {
+    background: var(--gradient-dark);
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-med);
+    border-bottom: 3px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.feature-item-correct:hover {
+    transform: translateY(-10px);
+    border-bottom: 3px solid green;
+    box-shadow: var(--shadow-lg);
+}
+
 .feature-icon {
     margin-bottom: 25px;
 }

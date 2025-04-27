@@ -29,6 +29,23 @@
             });
         };
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const playButtons = document.querySelectorAll('.play-button');
+    
+        playButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const videoContainer = button.closest('.video-container');
+                const video = videoContainer.querySelector('video');
+    
+                video.setAttribute('controls', '');
+                videoContainer.classList.add('expanded');
+                video.play();
+                button.style.display = 'none';
+            });
+        });
+    });
+    </script>
     <style>
         /* Blood Cursor Effects */
 
